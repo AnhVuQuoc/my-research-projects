@@ -26,6 +26,12 @@ report.
 | [Sampling and the Fourier Transform](docs/dsp-sampling-fourier/) | Nyquist-Shannon sampling, aliasing, the DFT, Parseval's theorem, and audio decimation (Lab 1) | [PDF](docs/dsp-sampling-fourier/report.pdf) |
 | [LTI Modeling of Audio and Room Acoustics](docs/dsp-lti-audio-acoustics/) | FIR/IIR equalizer design, reverberation by convolution, and inverse-filter dereverberation | [PDF](docs/dsp-lti-audio-acoustics/report.pdf) |
 
+## Communication System (COS201)
+
+| Project | Summary | Report |
+|---|---|---|
+| [FFT Spectrum Analyzer IP Core](docs/audio-spectrum-analyzer/) | 256-point R2SDF FFT audio analyzer in Verilog on PYNQ-Z2, verified bit-exact against a Python golden model | [PDF](docs/audio-spectrum-analyzer/report.pdf) |
+
 ## Analog CMOS
 
 | Project | Summary | Report |

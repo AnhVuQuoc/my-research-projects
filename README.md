@@ -16,7 +16,7 @@ report.
 | Project | Summary | Report |
 |---|---|---|
 | [Edge Voice and Gesture-Controlled Lighting](docs/edge-computing-atc26/) | Contactless smart lighting on an ESP32 using on-device TinyML keyword spotting and gesture sensing (ATC2026 submission) | [PDF](docs/edge-computing-atc26/report.pdf) |
-| [FFT Spectrum Analyzer IP Core](docs/audio-spectrum-analyzer/) | 256-point R2SDF FFT audio analyzer in Verilog on Zynq-7000, verified bit-exact against a Python golden model | [PDF](docs/audio-spectrum-analyzer/report.pdf) |
+| [FFT Spectrum Analyzer IP Core](docs/audio-spectrum-analyzer/) | 256-point R2SDF FFT audio analyzer in Verilog on PYNQ-Z2, verified bit-exact against a Python golden model | [PDF](docs/audio-spectrum-analyzer/report.pdf) |
 | [Approximate Systolic Array PE](docs/carry-save-pe-systolic-array/) | Fused carry-save processing element with bias-balanced approximation for efficient DNN matrix multiplication | [PDF](docs/carry-save-pe-systolic-array/report.pdf) |
 
 ## Signal Processing (DGT302)

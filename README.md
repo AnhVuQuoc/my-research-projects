@@ -26,7 +26,7 @@ report.
 | [Sampling and the Fourier Transform](docs/dsp-sampling-fourier/) | Nyquist-Shannon sampling, aliasing, the DFT, Parseval's theorem, and audio decimation (Lab 1) | [PDF](docs/dsp-sampling-fourier/report.pdf) |
 | [LTI Modeling of Audio and Room Acoustics](docs/dsp-lti-audio-acoustics/) | FIR/IIR equalizer design, reverberation by convolution, and inverse-filter dereverberation | [PDF](docs/dsp-lti-audio-acoustics/report.pdf) |
 
-## IC and Semiconductor Design (ICI211)
+## Analog CMOS
 
 | Project | Summary | Report |
 |---|---|---|
@@ -43,6 +43,11 @@ report.
 | [Non-Inverting Amplifier](docs/non-inverting-amplifier/) | Op-amp amplifier modeled in LTspice and realized on PCB in Proteus (ELC201, Lab 3) | [PDF](docs/non-inverting-amplifier/report.pdf) |
 | [Full-Wave Voltage Doubler](docs/voltage-doubler/) | Delon voltage doubler in LTspice with a load sweep on output level and ripple (ELC201) | [PDF](docs/voltage-doubler/report.pdf) |
 | [VisiBike Smart Bicycle Lighting](docs/visibike-smart-lighting/) | STM32 Nucleo-F429ZI driving turn signals and a brake light through a TB6612FNG driver | [PDF](docs/visibike-smart-lighting/report.pdf) |
+
+## Verilog RTL/Verification
+
+| Project | Summary | Report |
+|---|---|---|
 | [9-IP RTL Design and Verification Suite](docs/9ips-rtl-verification/) | Nine Verilog IP blocks from combinational logic to APB and UART peripherals with layered verification | [Source](docs/9ips-rtl-verification/src/) |
 
 ---

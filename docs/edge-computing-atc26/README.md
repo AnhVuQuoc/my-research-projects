@@ -4,10 +4,10 @@
 
 |  |  |
 |---|---|
-| Course / Venue | ATC2026 (IEEE style conference paper) |
+| Course / Venue | ATC2026 |
 | Type | Research paper |
-| Authors | Anh Q. Vu (first author), Hung D. Truong, Hoang H.N. Le, Le The Dung |
-| Affiliation | FPT University; HCMC University of Technology and Education |
+| Authors | Anh Q. Vu (first author), Hung D. Truong, Hoang H.N. Le, Le The Dung (Corresponding Author) |
+| Affiliation | FPT University |
 | Date | 2026 |
 | Tools | ESP32 (ESP-IDF, FreeRTOS), Edge Impulse EON Compiler, ESP-NN, INMP441, PAJ7620U2, WebSocket |
 

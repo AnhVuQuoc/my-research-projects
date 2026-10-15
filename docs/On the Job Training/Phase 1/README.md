@@ -29,7 +29,7 @@ See [4-bit ALU](4-bit%20ALU/) for the full write-up and [source](4-bit%20ALU/src
 
 ## 4-bit 5-Stage Pipelined CPU
 
-A 4-bit RISC CPU written in Verilog-2001, upgraded from a three-stage pipeline to a classic
+A 4-bit RISC CPU upgraded from a three-stage pipeline to a classic
 five-stage pipeline (IF, ID, EX, MEM, WB) with operand forwarding, a hazard detection unit, a
 write-first register file, and branch resolution in ID so a taken branch costs one cycle
 instead of two. Hazards are solved in hardware: forwarding from MEM and WB, a one-cycle

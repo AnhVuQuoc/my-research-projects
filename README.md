@@ -1,9 +1,8 @@
 # Research and Coursework Portfolio
 
 A curated portfolio of research papers, university coursework, On the Job Training Capstone projects by Vu Quoc Anh, a third year student at
-FPT University. The work spans from edge AI and embedded
-systems, digital front-end (RTL/Verification) and analog circuit design to digital
-signal processing.
+FPT University. The work spans from edge AI, digital
+signal processing, digital front-end (RTL/Verification) to analog circuit design.
 
 Each project lives in its own folder under [`docs/`](docs/) with a short write-up and the
 full report as a PDF. Click a project title for its summary, or the PDF link to open the

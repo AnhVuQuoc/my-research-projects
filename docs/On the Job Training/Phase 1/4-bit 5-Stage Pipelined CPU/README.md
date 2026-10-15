@@ -54,22 +54,22 @@ flowchart LR
 ![Top-level 5-stage datapath of cpu_top](docs/images/top_level_diagram.png)
 
 *Complete datapath of `cpu_top`: every module, every net between them, and every control signal.
-Black = data moving forward; blue = data moving backward (forwarding and write-back); orange dashed = control.
-A small hump marks 2 wires crossing without connecting; a dot marks a real connection. Lines leaving the top of a
+Black = data moving forward, blue = data moving backward (forwarding and write-back), orange dashed = control.
+A small hump marks 2 wires crossing without connecting. A dot marks a real connection. Lines leaving the top of a
 pipeline register are fields stored in it. Not drawn: `clk` and `rst` (to every register), the trace fields and the
 debug outputs.*
 
 How to follow it, stage by stage:
 
 - **IF:** PC addresses the ROM and the word goes into IF/ID. `PC_MUX` chooses PC + 1, or the branch target
-  `id_imm` when `pc_sel` = 1. `pc_en` and `ir_load` freeze PC and IF/ID during a stall; `flush` empties IF/ID.
+  `id_imm` when `pc_sel` = 1. `pc_en` and `ir_load` freeze PC and IF/ID during a stall. `flush` empties IF/ID.
 - **ID:** the word is split into fields. The control unit decodes the opcode and decides branches; the register
-  file reads Rd and Rs; the hazard unit compares the registers ID reads with the instruction in EX.
+  file reads Rd and Rs. The hazard unit compares the registers ID reads with the instruction in EX.
 - **EX:** the forwarding unit chooses, for each operand, the register value, the WB data or the MEM-stage ALU
   result. `OPERAND_MUX` replaces operand B with the immediate for LDI, LOAD and STORE. The ALU computes and
   FLAGS stores Zero and Carry at the end of the cycle.
 - **MEM:** the ALU result is the memory address. STORE writes the forwarded Rd value; LOAD reads.
-- **WB:** `WB_MUX` picks the ALU result or the memory data; `wb_data` goes to the register-file write port and
+- **WB:** `WB_MUX` picks the ALU result or the memory data. `wb_data` goes to the register-file write port and
   back to the forwarding MUXes.
 
 ### Key specifications

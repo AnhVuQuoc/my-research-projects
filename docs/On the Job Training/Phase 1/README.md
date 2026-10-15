@@ -1,8 +1,9 @@
 # On the Job Training: Phase 1
 
-Capstone RTL design and verification projects completed during Phase 1 of on the job
-training. Each project keeps the author's own README at its folder root, with source code
-under `src/` and figures under `docs/images/`.
+Capstone RTL design and verification projects completed during Phase 1 of On the Job
+Training (FPT University x HCL GUVI).
+
+**Author: Vu Quoc Anh (SE203519)**
 
 | Project | Summary | Source |
 |---|---|---|

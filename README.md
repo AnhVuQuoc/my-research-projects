@@ -1,8 +1,8 @@
 # Research and Coursework Portfolio
 
-A curated portfolio of research papers and university coursework by Vu Quoc Anh
-(SE203519), FPT University, Ho Chi Minh City. The work spans edge AI and embedded
-systems, digital and analog circuit design, IC and semiconductor design, and digital
+A curated portfolio of research papers, university coursework, On the Job Training Capstone projects by Vu Quoc Anh, a third year student at
+FPT University. The work spans from edge AI and embedded
+systems, digital front-end (RTL/Verification) and analog circuit design to digital
 signal processing.
 
 Each project lives in its own folder under [`docs/`](docs/) with a short write-up and the

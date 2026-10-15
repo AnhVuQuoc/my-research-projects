@@ -56,6 +56,15 @@ report.
 |---|---|---|
 | [9-IP RTL Design and Verification Suite](docs/9ips-rtl-verification/) | Nine Verilog IP blocks from combinational logic to APB and UART peripherals with layered verification | [Source](docs/9ips-rtl-verification/src/) |
 
+## On the Job Training
+
+### Phase 1
+
+| Project | Summary | Report |
+|---|---|---|
+| [4-bit ALU](docs/On%20the%20Job%20Training/Phase%201/4-bit%20ALU/) | 4-bit ALU with eight single-cycle operations and a sequential shift-based multiplier/divider that reuses the ALU adder | [Source](docs/On%20the%20Job%20Training/Phase%201/4-bit%20ALU/src/) |
+| [4-bit 5-Stage Pipelined CPU](docs/On%20the%20Job%20Training/Phase%201/4-bit%205-Stage%20Pipelined%20CPU/) | 4-bit RISC CPU with a five-stage pipeline, operand forwarding, hazard detection, and branch resolution in ID | [Source](docs/On%20the%20Job%20Training/Phase%201/4-bit%205-Stage%20Pipelined%20CPU/src/) |
+
 ---
 
 ## Repository layout

@@ -275,4 +275,4 @@ any Fmax gain becomes a real speed-up.
 
 ## Author
 
-**Vu Quoc Anh** (SE203519) · Phase 1 Capstone · Lecturer: Shivashish Pal
+**Vu Quoc Anh**

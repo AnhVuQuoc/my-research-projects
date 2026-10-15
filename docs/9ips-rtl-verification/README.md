@@ -7,7 +7,7 @@
 | Course / Venue | Self-directed RTL design and verification project |
 | Type | Verilog IP + verification suite (source only) |
 | Role | Author, individual |
-| Tools | Verilog 2001, Icarus Verilog / simulation, Makefile flow |
+| Tools | Verilog / simulation, Makefile flow |
 
 ## Overview
 This suite contains nine incremental sub-projects (p1 to p9) that trace a full path from basic digital design to industry-style functional verification. The early stages build and check combinational and encoder/decoder IP directly. The middle stages introduce a layered, agent-based testbench architecture (driver, monitor, checker, scoreboard, coverage, and reference model). The later stages apply that architecture to bus-attached IP, delivering an APB peripheral and a UART controller each with a self-checking, coverage-driven verification environment. Every sub-project builds through a common Makefile flow.

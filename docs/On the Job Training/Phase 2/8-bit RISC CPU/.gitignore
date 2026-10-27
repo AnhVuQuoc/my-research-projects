@@ -1,0 +1,22 @@
+# simulation output
+build/
+*.vvp
+*.vcd
+*.wdb
+xsim.dir/
+.Xil/
+# Vivado project and run output
+vivado/
+reports/
+*.jou
+*.log
+*.str
+*.pb
+*.backup.*
+webtalk*
+usage_statistics_webtalk.*
+vivado_pid*.zip
+# editors and OS
+*.swp
+.DS_Store
+Thumbs.db

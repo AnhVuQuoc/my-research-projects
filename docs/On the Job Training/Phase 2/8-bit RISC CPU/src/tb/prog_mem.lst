@@ -1,0 +1,11 @@
+  0  8280          LDI  R1, 0x80       ; address
+  1  845A          LDI  R2, 0x5A       ; data
+  2  B440          ST   R2, [R1]       ; M[0x80] = 0x5A  (R1 from WB, R2 from MEM)
+  3  A640          LD   R3, [R1]       ; R3 = 0x5A       (R1 by RF bypass)
+  4  18D8          ADD  R4, R3, R3     ; load-use stall on port A and B -> R4 = 0xB4
+  5  9201          ADDI R1, 1          ; R1 = 0x81
+  6  B840          ST   R4, [R1]       ; M[0x81] = 0xB4  (address R1 from MEM, data R4 from WB)
+  7  AA40          LD   R5, [R1]       ; R5 = 0xB4
+  8  BA00          ST   R5, [R0]       ; load-use stall on port B (store data) -> M[0] = 0xB4
+  9  AC00          LD   R6, [R0]       ; R6 = 0xB4 (memory written 1 cycle earlier)
+ 10  F000          HLT

@@ -64,6 +64,12 @@ report.
 | [4-bit ALU](docs/On%20the%20Job%20Training/Phase%201/4-bit%20ALU/) | 4-bit ALU with eight single-cycle operations and a sequential shift-based multiplier/divider that reuses the ALU adder | [Source](docs/On%20the%20Job%20Training/Phase%201/4-bit%20ALU/src/) |
 | [4-bit 5-Stage Pipelined CPU](docs/On%20the%20Job%20Training/Phase%201/4-bit%205-Stage%20Pipelined%20CPU/) | 4-bit RISC CPU with a five-stage pipeline, operand forwarding, hazard detection, and branch resolution in ID | [Source](docs/On%20the%20Job%20Training/Phase%201/4-bit%205-Stage%20Pipelined%20CPU/src/) |
 
+### Phase 2
+
+| Project | Summary | Report |
+|---|---|---|
+| [8-bit RISC CPU](docs/On%20the%20Job%20Training/Phase%202/8-bit%20RISC%20CPU/) | 8-bit RISC CPU with a five-stage pipeline, a 16-instruction 3-address ISA, register-indirect memory access, and all hazards resolved in hardware | [Source](docs/On%20the%20Job%20Training/Phase%202/8-bit%20RISC%20CPU/src/) |
+
 ---
 
 ## Repository layout

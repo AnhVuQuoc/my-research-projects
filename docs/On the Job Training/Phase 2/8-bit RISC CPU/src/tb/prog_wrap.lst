@@ -1,0 +1,4 @@
+  0  E0FE          BNZ  high           ; Z = 0 after reset: taken
+  1  F000          HLT
+254  8207  high:   LDI  R1, 7
+255  26D8          SUB  R3, R3, R3     ; Z = 1

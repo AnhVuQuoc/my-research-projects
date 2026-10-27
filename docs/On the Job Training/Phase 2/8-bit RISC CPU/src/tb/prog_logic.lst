@@ -1,0 +1,9 @@
+  0  82F0          LDI  R1, 0xF0
+  1  843C          LDI  R2, 0x3C
+  2  3650          AND  R3, R1, R2     ; 0x30
+  3  4850          OR   R4, R1, R2     ; 0xFC
+  4  5A50          XOR  R5, R1, R2     ; 0xCC
+  5  6C40          SHL  R6, R1         ; 0xE0, C = old bit 7 = 1
+  6  7E80          SHR  R7, R2         ; 0x1E, C = old bit 0 = 0
+  7  5048          XOR  R0, R1, R1     ; 0, Z = 1 (C unchanged = 0)
+  8  F000          HLT

@@ -1,0 +1,14 @@
+  0  8205          LDI  R1, 5          ; counter
+  1  8400          LDI  R2, 0          ; sum
+  2  1488  loop:   ADD  R2, R2, R1     ; sum += counter
+  3  92FF          ADDI R1, 255        ; counter - 1 (Z = 1 when it reaches 0)
+  4  E002          BNZ  loop           ; flag stall (ADDI just before), taken 4 times
+  5  D007          BZ   skip           ; Z = 1: taken (no stall: BNZ writes no flag)
+  6  8663          LDI  R3, 99         ; never runs
+  7  C009  skip:   JMP  next
+  8  864D          LDI  R3, 77         ; never runs
+  9  8801  next:   LDI  R4, 1
+ 10  2B20          SUB  R5, R4, R4     ; 0, Z = 1, no borrow
+ 11  E006          BNZ  6              ; flag stall, NOT taken
+ 12  F000          HLT
+ 13  8C01          LDI  R6, 1          ; fetched while HLT is in ID: never runs

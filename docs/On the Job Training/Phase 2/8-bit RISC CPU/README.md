@@ -153,7 +153,7 @@ rtl/          17 modules, shared header cpu_defs.vh, program.mem
 tb/           17 self-checking testbenches, independent ISA reference model, test programs
 asm/          assembly sources of the test programs
 scripts/      asm8.py (assembler), regression scripts, mutation_test.py, Vivado Tcl scripts
-constraints/  basys3_cpu_top.xdc (43 debug outputs on LEDs and Pmods)
+constraints/  basys3_cpu_top.xdc
 docs/         figures used in this README
 ```
 ---

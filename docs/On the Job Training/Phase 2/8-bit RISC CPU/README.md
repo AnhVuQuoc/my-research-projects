@@ -1,6 +1,6 @@
 # 8-Bit RISC CPU with a 5-Stage Pipeline
 
-![HDL](https://img.shields.io/badge/HDL-Verilog--2001-blue)
+![HDL](https://img.shields.io/badge/HDL-Verilog-blue)
 ![Target](https://img.shields.io/badge/FPGA-Basys%203%20(xc7a35t)-orange)
 ![Tests](https://img.shields.io/badge/testbenches-17%2F17%20PASS-brightgreen)
 ![Mutants](https://img.shields.io/badge/mutation%20testing-12%2F12%20killed-brightgreen)

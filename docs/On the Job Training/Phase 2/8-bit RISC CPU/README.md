@@ -141,7 +141,7 @@ All 17 testbenches pass.
 ## Synthesis
 
 Yosys (`synth_xilinx -family xc7`) maps the design to **180 flip-flops and 233 LUTs**, with the data memory as
-distributed RAM and **no latches or combinational loops**. Vivado project, timing and bitstream scripts are
+distributed RAM and no latches or combinational loops. Vivado project, timing and bitstream scripts are
 provided for the Digilent Basys 3 board.
 
 ---

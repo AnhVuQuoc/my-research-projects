@@ -5,7 +5,7 @@
 ![Tests](https://img.shields.io/badge/testbenches-17%2F17%20PASS-brightgreen)
 ![Mutants](https://img.shields.io/badge/mutation%20testing-12%2F12%20killed-brightgreen)
 
-A synthesizable 8-bit RISC processor core in Verilog-2001 with a classic **IF, ID, EX, MEM, WB** pipeline.
+A synthesizable 8-bit RISC processor core in Verilog with a classic **IF, ID, EX, MEM, WB** pipeline.
 The core implements a 16-instruction, 3-address ISA with register-indirect memory access, and it resolves
 every data and control hazard in hardware: forwarding from MEM and WB, a write-first register file,
 load-use and flag stalls, branches decided in ID, and a halt instruction that drains the pipeline safely.
@@ -13,7 +13,7 @@ load-use and flag stalls, branches decided in ID, and a halt instruction that dr
 Every design decision was written down before the RTL, and the design is verified at 6 levels, from
 exhaustive unit tests to lockstep comparison against an independent ISA model and mutation testing.
 
-> Vu Quoc Anh (SE203519) · Capstone 2, VLSI Design Program · Lecturer: Shivashish Pal
+> Vu Quoc Anh (SE203519) · Capstone 2, VLSI Design Program 
 
 ---
 
@@ -128,7 +128,7 @@ condition clears by itself after exactly 1 cycle.
 PASS: tb_cpu (Vu Quoc Anh, SE203519) 115 directed + 52079 lockstep + 22383 invariant checks, 0 errors
 ```
 
-All 17 testbenches pass in Icarus Verilog, and Verilator `-Wall` reports no warnings.
+All 17 testbenches pass.
 
 | Program | Focus | CPI after pipeline fill |
 |---|---|---|
@@ -156,15 +156,6 @@ scripts/      asm8.py (assembler), regression scripts, mutation_test.py, Vivado 
 constraints/  basys3_cpu_top.xdc (43 debug outputs on LEDs and Pmods)
 docs/         figures used in this README
 ```
-
-## Quick start
-
-```bash
-./scripts/run_all_icarus.sh          # assemble, lint and run all 17 testbenches
-python3 scripts/mutation_test.py     # insert 12 bugs and confirm that each one is detected
-python3 scripts/asm8.py asm/demo.asm rtl/program.mem   # assemble a program
-```
-
 ---
 
-**Author:** Vu Quoc Anh (SE203519) · Capstone 2, VLSI Design Program · Lecturer: Shivashish Pal
+**Author:** Vu Quoc Anh (SE203519) · Capstone 2, VLSI Design Program

@@ -1,6 +1,6 @@
-# VisiBike: Smart Lighting System for Bicycles
+# VisiBike, a Smart Lighting System for Bicycles
 
-> An STM32-driven smart lighting system with turn signals and a brake light for safer night riding.
+> A smart lighting system driven by an STM32, with turn signals and a brake light for safer night riding.
 
 |  |  |
 |---|---|
@@ -11,20 +11,20 @@
 | Tools | STM32 (Nucleo-F429ZI), TB6612FNG driver, C / embedded, STM32CubeIDE |
 
 ## Overview
-VisiBike is a smart electronic lighting system that improves a cyclist's nighttime visibility and signaling. An STM32 Nucleo-F429ZI board reads four pushbuttons and drives three high-power 3W LEDs, left and right turn signals plus a brake light, through a SparkFun TB6612FNG motor driver repurposed as a high-current power switch and buffer. The full report is written in Vietnamese.
+VisiBike is a smart electronic lighting system that improves a cyclist's visibility and signaling at night. An STM32 Nucleo-F429ZI board reads four pushbuttons and drives three high power 3W LEDs, which serve as the left and right turn signals and a brake light. The LEDs are driven through a SparkFun TB6612FNG motor driver that is repurposed as a high current power switch and buffer. The full report is written in Vietnamese.
 
 ## Highlights
-- STM32 Nucleo-F429ZI firmware reading four pushbuttons and driving three high-power 3W LEDs.
-- Reuse of a TB6612FNG motor driver as a high-current power switch and buffer, isolating the microcontroller from the LED load.
-- Distinct signaling modes: left turn, right turn, and brake light.
-- Algorithm flowchart and source-code analysis, with firmware developed in STM32CubeIDE.
+- STM32 Nucleo-F429ZI firmware that reads four pushbuttons and drives three high power 3W LEDs.
+- Reuse of a TB6612FNG motor driver as a high current power switch and buffer, which isolates the microcontroller from the LED load.
+- Distinct signaling modes for the left turn, the right turn, and the brake light.
+- An algorithm flowchart and an analysis of the source code, with the firmware developed in STM32CubeIDE.
 
 ## Key Results
-- Working prototype driving all three 3W LEDs from pushbutton inputs, demonstrating turn-signal and brake-light behavior.
-- Verified high-current LED switching through the TB6612FNG buffer, keeping drive current off the microcontroller pins.
+- A working prototype drives all three 3W LEDs from the pushbutton inputs, demonstrating the turn signal and brake light behavior.
+- High current LED switching through the TB6612FNG buffer was verified, which keeps the drive current off the microcontroller pins.
 
 ## My Contribution
-- Contributed to hardware wiring, embedded firmware development in STM32CubeIDE, and system testing as a member of the four-person team.
+- Contributed to the hardware wiring, the embedded firmware development in STM32CubeIDE, and the system testing as a member of the team of four.
 
 ## Files
 - [Full report](report.pdf)

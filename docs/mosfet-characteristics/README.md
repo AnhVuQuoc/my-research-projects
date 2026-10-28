@@ -1,6 +1,6 @@
 # Study of MOSFET Characteristics
 
-> Simulation-based characterization of NMOS and PMOS transistors for analog IC design.
+> Characterization of NMOS and PMOS transistors by simulation, for analog IC design.
 
 |  |  |
 |---|---|
@@ -8,23 +8,23 @@
 | Type | Lab report (Lab 1) |
 | Role | Author, individual |
 | Date | 2026 |
-| Tools | SPICE-class circuit simulation, semiconductor device analysis |
+| Tools | SPICE class circuit simulation, semiconductor device analysis |
 
 ## Overview
-This lab characterizes the electrical behavior of PMOS and NMOS transistors through circuit simulation. It examines the output characteristics (I_D versus V_DS), the transfer characteristics (I_D versus V_GS), and the effect of the W/L ratio, then interprets each in the context of analog IC design. The goal is to connect device-level physics to the design parameters engineers actually tune.
+This lab characterizes the electrical behavior of PMOS and NMOS transistors through circuit simulation. It examines the output characteristics (I_D versus V_DS), the transfer characteristics (I_D versus V_GS), and the effect of the W/L ratio, and then interprets each result in the context of analog IC design. The goal is to connect the physics of the device to the design parameters that engineers actually tune.
 
 ## Highlights
-- Full characterization of both device polarities: Section A covers PMOS (output, transfer, W/L effect) and Section B covers NMOS.
-- Extracts and discusses threshold voltage (Vth) from the transfer characteristics.
-- Analyzes transconductance (gm) and its role in setting small-signal gain.
-- Explains channel-length modulation and its impact on finite output resistance.
-- Demonstrates how the W/L ratio scales drain current and shifts device behavior.
+- Characterizes both device polarities in full. Section A covers PMOS (output, transfer, W/L effect) and Section B covers NMOS.
+- Extracts and discusses the threshold voltage (Vth) from the transfer characteristics.
+- Analyzes the transconductance (gm) and its role in setting the small signal gain.
+- Explains channel length modulation and its impact on the finite output resistance.
+- Demonstrates how the W/L ratio scales the drain current and shifts the device behavior.
 
 ## Key Results
-- Output characteristics reveal the triode-to-saturation transition and the channel-length-modulation slope in saturation, quantifying output resistance.
-- Transfer characteristics locate the threshold voltage and expose the square-law dependence of I_D on overdrive.
-- Increasing the W/L ratio proportionally raises drain current and transconductance, confirming its use as a primary sizing knob.
-- Comparison of PMOS and NMOS highlights the mobility-driven current asymmetry between the two polarities.
+- The output characteristics reveal the transition from the triode region to saturation and the slope in saturation caused by channel length modulation, which quantifies the output resistance.
+- The transfer characteristics locate the threshold voltage and expose the square law dependence of I_D on the overdrive voltage.
+- Increasing the W/L ratio raises the drain current and transconductance proportionally, which confirms its use as a primary sizing parameter.
+- Comparing PMOS and NMOS highlights the current asymmetry between the two polarities, which is caused by their different mobilities.
 
 ## Files
 - [Full report](report.pdf)

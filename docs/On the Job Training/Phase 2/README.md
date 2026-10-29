@@ -13,7 +13,7 @@ Training (FPT University x HCL GUVI).
 
 ## 8-bit RISC CPU
 
-A synthesizable 8-bit RISC processor core in Verilog-2001 with a classic five-stage pipeline
+A synthesizable 8-bit RISC processor core in Verilog with a classic five-stage pipeline
 (IF, ID, EX, MEM, WB), eight 8-bit registers, and Harvard memories made of a 256 x 16-bit
 instruction ROM and a 256 x 8-bit data RAM. Every data and control hazard is resolved in
 hardware, through forwarding from MEM and WB, a write-first register file, load-use and flag

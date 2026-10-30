@@ -10,7 +10,7 @@ synthesized and implemented, timing has been closed, and a bitstream is availabl
 `src/bitstream/pynq_z2_top.bit`.
 
 ![Board](https://img.shields.io/badge/board-PYNQ--Z2%20(XC7Z020)-blue)
-![HDL](https://img.shields.io/badge/HDL-Verilog--2001-orange)
+![HDL](https://img.shields.io/badge/HDL-Verilog-orange)
 ![Tool](https://img.shields.io/badge/tool-Vivado%202020.2%2B-green)
 ![Verification](https://img.shields.io/badge/verification-bit--exact%20vs.%20Python-brightgreen)
 ![Timing](https://img.shields.io/badge/timing-WNS%20%2B2.510%20ns%20%40%2049.98%20MHz-brightgreen)

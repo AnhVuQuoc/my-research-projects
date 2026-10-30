@@ -55,7 +55,7 @@ report.
 |---|---|---|
 | [9-IP RTL Design and Verification Suite](docs/9ips-rtl-verification/) | Nine Verilog IP blocks, from combinational logic to APB and UART peripherals, with layered verification | [Source](docs/9ips-rtl-verification/src/) |
 
-## On the Job Training
+## On-the-Job Training
 
 ### Phase 1
 

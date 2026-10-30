@@ -398,7 +398,7 @@ for standalone PPA measurement and does not produce a board bitstream.
 
 ## Authors
 
-Anh Quoc Vu · Hung Dong Truong · Hoang Nguyen Huy Le · Minh Duy Nguyen ·
+**Anh Quoc Vu** · Hung Dong Truong · Hoang Nguyen Huy Le · Minh Duy Nguyen ·
 Duyen Vu Ky Nguyen · Loc Duy Lam
 
 Please open an [issue](https://github.com/AnhVuQuoc/my-research-projects/issues) for questions, bug reports, or reproduction problems.

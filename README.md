@@ -74,8 +74,7 @@ report.
 
 | Project | Summary | Report |
 |---|---|---|
-| [8-bit RISC SoC with Timer & ADC](docs/On%20the%20Job%20Training/Phase%203/8-bit%20RISC%20SoC%20with%20Timer%20and%20ADC/) | 8-bit RISC CPU controls a peripheral that counts time, measures analog voltages (SAR ADC), stores the
-results (FIFO) and raises an interrupt when there is work for the CPU | [Source](docs/On%20the%20Job%20Training/Phase%203/8-bit%20RISC%20SoC%20with%20Timer%20and%20ADC/) |
+| [8-bit RISC SoC with Timer & ADC](docs/On%20the%20Job%20Training/Phase%203) | 8-bit RISC CPU controls a peripheral featuring 8-bit timer and SAR ADC, stores the data (FIFO) and raises an interrupt when there is work for the CPU | [Source](docs/On%20the%20Job%20Training/Phase%203) |
 ---
 
 ## Repository layout

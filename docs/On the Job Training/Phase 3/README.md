@@ -548,7 +548,7 @@ docs/                       images/
 
 ## 10. How to run
 
-**Requirements.** Icarus Verilog 12 and Python 3 for the directed tests. Verilator 5 for lint and assertions. Verilator 5.04x or newer and the Accellera UVM library for the UVM regression.
+**Requirements.** Vivado and Python 3 for the directed tests. Verilator 5 for lint and assertions. The Accellera UVM library for the UVM regression.
 
 ```bash
 sh scripts/run_all.sh                         # lint and 9 SoC, peripheral and CPU testbenches

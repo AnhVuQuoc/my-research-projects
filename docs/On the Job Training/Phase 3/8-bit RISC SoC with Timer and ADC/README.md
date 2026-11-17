@@ -1,6 +1,6 @@
 # RISC-8 SoC: Pipelined CPU with Interrupts, 8-bit Timer and SAR ADC
 
-![RTL](https://img.shields.io/badge/RTL-Verilog%202001-blue)
+![RTL](https://img.shields.io/badge/RTL-Verilog%20-blue)
 ![Verification](https://img.shields.io/badge/verification-SystemVerilog%20%2B%20UVM-purple)
 ![Directed](https://img.shields.io/badge/testbenches-25%2F25%20PASS-brightgreen)
 ![UVM](https://img.shields.io/badge/UVM-12%2F12%20PASS%2C%20100%25%20coverage-brightgreen)

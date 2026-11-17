@@ -26,7 +26,6 @@ The RTL is plain Verilog 2001 and synthesizable. The verification side is the la
 8. [Design decisions](#8-design-decisions)
 9. [Repository structure](#9-repository-structure)
 10. [How to run](#10-how-to-run)
-11. [Documentation](#11-documentation)
 
 ---
 
@@ -542,7 +541,7 @@ tb/
 asm/                        soc_demo.asm and CPU test programs
 scripts/                    asm8.py, run_all.sh, run_cpu_units.sh, run_sva.sh,
                             run_uvm.sh, mutation_soc.py, file lists
-docs/                       designer guide, study guides (EN, VI), images/
+docs/                       images/
 ```
 
 ---
@@ -573,16 +572,6 @@ python3 scripts/asm8.py asm/soc_demo.asm build/soc_demo.mem          # assemble 
 | Simulation, UVM (Vivado 2019.1 or newer) | `sv/*.sv` without `probe/`, `tb/uvm/timer_adc_pkg.sv`, `tb/uvm/tb_top.sv`, the other files in `tb/uvm` as headers, include path `tb/uvm`, `-L uvm` | `tb_top` |
 
 Set `xsim.simulate.runtime` to `-all`, because the long testbenches run past the default 1000 ns. `sv/probe/run_probes.tcl` checks which SystemVerilog and UVM features the installed XSim supports.
-
----
-
-## 11. Documentation
-
-| Document | Content |
-|---|---|
-| `docs/SoC_Timer_ADC_Designer_Guide_SE203519.pdf` | specification, 17 design decisions, every module, interrupt theory, verification plan and results |
-| `docs/RISC8_SoC_Study_Guide_EN_SE203519.pdf` | study guide in English: theory of every block, signal by signal examples from real waveforms, every testbench explained |
-| `docs/RISC8_SoC_Study_Guide_VI_SE203519.pdf` | the same study guide in Vietnamese |
 
 ---
 

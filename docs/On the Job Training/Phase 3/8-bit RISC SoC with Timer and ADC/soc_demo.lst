@@ -1,0 +1,158 @@
+  0  C020          JMP  main
+ 16  8CFC  isr:    LDI  R6, 0xFC          ; ADC_STAT
+ 17  AF80          LD   R7, [R6]
+ 18  8C10          LDI  R6, 0x10          ; EMPTY bit
+ 19  3FF0          AND  R7, R7, R6
+ 20  E01A          BNZ  isr_done          ; FIFO empty: done
+ 21  8CFA          LDI  R6, 0xFA          ; ADC_DATA (pop)
+ 22  AF80          LD   R7, [R6]
+ 23  BF40          ST   R7, [R5]          ; buffer[R5] = sample
+ 24  9A01          ADDI R5, 1
+ 25  C010          JMP  isr
+ 26  8CFE  isr_done: LDI R6, 0xFE         ; IRQ_STAT
+ 27  8E3F          LDI  R7, 0x3F
+ 28  BF80          ST   R7, [R6]          ; clear all sticky flags (W1C)
+ 29  0001          RETI
+ 32  88FF          LDI  R4, 0xFF          ; ID
+ 33  A300          LD   R1, [R4]
+ 34  8880          LDI  R4, 0x80
+ 35  B300          ST   R1, [R4]          ; M[80] = A8
+ 36  88F6          LDI  R4, 0xF6          ; ADC_SMP = 3
+ 37  8203          LDI  R1, 3
+ 38  B300          ST   R1, [R4]
+ 39  88F5          LDI  R4, 0xF5          ; ADC_CTRL = EN | START | CH1
+ 40  8213          LDI  R1, 0x13
+ 41  B300          ST   R1, [R4]
+ 42  88FC          LDI  R4, 0xFC          ; ADC_STAT
+ 43  8410          LDI  R2, 0x10          ; EMPTY mask
+ 44  A300  wait_b: LD   R1, [R4]
+ 45  3250          AND  R1, R1, R2
+ 46  E02C          BNZ  wait_b            ; still empty
+ 47  88FB          LDI  R4, 0xFB          ; ADC_RCH, peek before the pop
+ 48  A300          LD   R1, [R4]
+ 49  8681          LDI  R3, 0x81
+ 50  B2C0          ST   R1, [R3]          ; M[81] = 81 (VALID, CH1)
+ 51  88FA          LDI  R4, 0xFA          ; ADC_DATA, pop
+ 52  A300          LD   R1, [R4]
+ 53  8682          LDI  R3, 0x82
+ 54  B2C0          ST   R1, [R3]          ; M[82] = 56 (1.111 V)
+ 55  88FB          LDI  R4, 0xFB          ; ADC_RCH after the pop: latched channel
+ 56  A300          LD   R1, [R4]
+ 57  8683          LDI  R3, 0x83
+ 58  B2C0          ST   R1, [R3]          ; M[83] = 50 (LVALID, LCH = 1, FIFO empty)
+ 59  8A90          LDI  R5, 0x90          ; ISR buffer pointer
+ 60  88F1          LDI  R4, 0xF1          ; TMR_PRESC = 3
+ 61  8203          LDI  R1, 3
+ 62  B300          ST   R1, [R4]
+ 63  88F2          LDI  R4, 0xF2          ; TMR_LOAD = 24: 100-clock period
+ 64  8218          LDI  R1, 24
+ 65  B300          ST   R1, [R4]
+ 66  88FD          LDI  R4, 0xFD          ; IRQ_EN = FIFO_WM
+ 67  8240          LDI  R1, 0x40
+ 68  B300          ST   R1, [R4]
+ 69  88F5          LDI  R4, 0xF5          ; ADC_CTRL = WM4 | CH2 | TRIG = overflow | EN
+ 70  82A5          LDI  R1, 0xA5
+ 71  B300          ST   R1, [R4]
+ 72  88F0          LDI  R4, 0xF0          ; TMR_CTRL = EN
+ 73  8201          LDI  R1, 1
+ 74  B300          ST   R1, [R4]
+ 75  0002          EI
+ 76  8698          LDI  R3, 0x98          ; stop after 8 samples
+ 77  0004  sleep_c: WFI
+ 78  2558          SUB  R2, R5, R3
+ 79  E04D          BNZ  sleep_c
+ 80  0003          DI
+ 81  88F0          LDI  R4, 0xF0          ; timer off
+ 82  8200          LDI  R1, 0
+ 83  B300          ST   R1, [R4]
+ 84  88F5          LDI  R4, 0xF5          ; ADC off
+ 85  B300          ST   R1, [R4]
+ 86  88FD          LDI  R4, 0xFD          ; IRQ_EN = 0: this part no longer uses the irq pin
+ 87  B300          ST   R1, [R4]
+ 88  88F9          LDI  R4, 0xF9
+ 89  8264          LDI  R1, 100
+ 90  B300          ST   R1, [R4]
+ 91  88FE          LDI  R4, 0xFE          ; clear old flags
+ 92  823F          LDI  R1, 0x3F
+ 93  B300          ST   R1, [R4]
+ 94  88F5          LDI  R4, 0xF5          ; ADC_CTRL = EN | START | CH3
+ 95  8233          LDI  R1, 0x33
+ 96  B300          ST   R1, [R4]
+ 97  88FE          LDI  R4, 0xFE          ; poll IRQ_STAT.ADC_WD
+ 98  8408          LDI  R2, 0x08
+ 99  A300  wait_d: LD   R1, [R4]
+100  3250          AND  R1, R1, R2
+101  D063          BZ   wait_d
+102  A300          LD   R1, [R4]
+103  8684          LDI  R3, 0x84
+104  B2C0          ST   R1, [R3]          ; M[84] = 4C (FIFO_WM | ADC_WD | ADC_EOC)
+105  88FA          LDI  R4, 0xFA
+106  A300          LD   R1, [R4]
+107  8685          LDI  R3, 0x85
+108  B2C0          ST   R1, [R3]          ; M[85] = E8
+109  88F9          LDI  R4, 0xF9          ; THR_HI back to 255
+110  82FF          LDI  R1, 0xFF
+111  B300          ST   R1, [R4]
+112  88F5          LDI  R4, 0xF5          ; EN | START, ch0
+113  8203          LDI  R1, 0x03
+114  B300          ST   R1, [R4]
+115  88FC          LDI  R4, 0xFC
+116  840F          LDI  R2, 0x0F          ; LEVEL mask
+117  A300  wait_f1: LD  R1, [R4]
+118  3250          AND  R1, R1, R2
+119  D075          BZ   wait_f1
+120  88F5          LDI  R4, 0xF5          ; EN | START, ch1
+121  8213          LDI  R1, 0x13
+122  B300          ST   R1, [R4]
+123  88FC          LDI  R4, 0xFC
+124  8402          LDI  R2, 0x02          ; LEVEL = 2
+125  A300  wait_f2: LD  R1, [R4]
+126  3250          AND  R1, R1, R2
+127  D07D          BZ   wait_f2
+128  88FA          LDI  R4, 0xFA
+129  1700          ADD  R3, R4, R0        ; pointer arithmetic: must NOT pop
+130  A2C0          LD   R1, [R3]          ; pop 1
+131  A4C0          LD   R2, [R3]          ; pop 2, back-to-back
+132  8686          LDI  R3, 0x86
+133  B2C0          ST   R1, [R3]          ; M[86] = 1F (ch0, 0.40 V)
+134  8687          LDI  R3, 0x87
+135  B4C0          ST   R2, [R3]          ; M[87] = 56 (ch1)
+136  88FC          LDI  R4, 0xFC
+137  A300          LD   R1, [R4]
+138  8688          LDI  R3, 0x88
+139  B2C0          ST   R1, [R3]          ; M[88] = 10 (empty)
+140  88FE          LDI  R4, 0xFE          ; clear the sticky flags left by D and F
+141  823F          LDI  R1, 0x3F
+142  B300          ST   R1, [R4]
+143  88F5          LDI  R4, 0xF5          ; ADC_CTRL = EN | continuous, ch0
+144  820D          LDI  R1, 0x0D
+145  B300          ST   R1, [R4]
+146  88FE          LDI  R4, 0xFE
+147  8410          LDI  R2, 0x10          ; FIFO_OVR
+148  A300  wait_g: LD   R1, [R4]
+149  3250          AND  R1, R1, R2
+150  D094          BZ   wait_g
+151  88F5          LDI  R4, 0xF5          ; ADC off
+152  8200          LDI  R1, 0
+153  B300          ST   R1, [R4]
+154  88FE          LDI  R4, 0xFE
+155  A300          LD   R1, [R4]
+156  8689          LDI  R3, 0x89
+157  B2C0          ST   R1, [R3]          ; M[89] = 54 (FIFO_WM | FIFO_OVR | ADC_EOC)
+158  88FC          LDI  R4, 0xFC
+159  A300          LD   R1, [R4]
+160  868A          LDI  R3, 0x8A
+161  B2C0          ST   R1, [R3]          ; M[8A] = A8 (WM | FULL | LEVEL 8)
+162  88F1          LDI  R4, 0xF1
+163  8200          LDI  R1, 0
+164  B300          ST   R1, [R4]          ; PRESC = 0
+165  88F2          LDI  R4, 0xF2
+166  8209          LDI  R1, 9
+167  B300          ST   R1, [R4]          ; LOAD = 9
+168  88F3          LDI  R4, 0xF3
+169  8203          LDI  R1, 3
+170  B300          ST   R1, [R4]          ; CMP = 3
+171  88F0          LDI  R4, 0xF0
+172  8201          LDI  R1, 1
+173  B300          ST   R1, [R4]          ; timer on
+174  F000          HLT

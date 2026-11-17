@@ -70,6 +70,12 @@ report.
 |---|---|---|
 | [8-bit RISC CPU](docs/On%20the%20Job%20Training/Phase%202/8-bit%20RISC%20CPU/) | 8-bit RISC CPU with a five-stage pipeline, a 16-instruction 3-address ISA, register indirect memory access, and all hazards resolved in hardware | [Source](docs/On%20the%20Job%20Training/Phase%202/8-bit%20RISC%20CPU/src/) |
 
+### Phase 3
+
+| Project | Summary | Report |
+|---|---|---|
+| [8-bit RISC SoC with Timer & ADC](docs/On%20the%20Job%20Training/Phase%203/8-bit%20RISC%20SoC%20with%20Timer%20and%20ADC/) | 8-bit RISC CPU controls a peripheral that counts time, measures analog voltages (SAR ADC), stores the
+results (FIFO) and raises an interrupt when there is work for the CPU | [Source](docs/On%20the%20Job%20Training/Phase%203/8-bit%20RISC%20SoC%20with%20Timer%20and%20ADC/) |
 ---
 
 ## Repository layout
